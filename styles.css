@@ -1,0 +1,300 @@
+/* ─── Reset & base ───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --indigo-500: #6366f1;
+  --indigo-600: #4f46e5;
+  --indigo-50:  #eef2ff;
+  --gray-50:    #f9fafb;
+  --gray-100:   #f3f4f6;
+  --gray-200:   #e5e7eb;
+  --gray-400:   #9ca3af;
+  --gray-600:   #4b5563;
+  --gray-700:   #374151;
+  --gray-900:   #111827;
+  --green-500:  #22c55e;
+  --shadow-sm:  0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:  0 4px 16px rgba(0,0,0,.07), 0 2px 6px rgba(0,0,0,.04);
+  --shadow-lg:  0 12px 40px rgba(79,70,229,.10), 0 4px 12px rgba(0,0,0,.06);
+  --radius-md:  0.75rem;
+  --radius-lg:  1.25rem;
+  --radius-xl:  1.75rem;
+  --container:  860px;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--gray-900);
+  background: linear-gradient(160deg, #ffffff 0%, var(--gray-50) 55%, #eef2ff 100%);
+}
+
+/* ─── Layout ─────────────────────────────────────────────── */
+.page {
+  padding:
+    max(24px, env(safe-area-inset-top))
+    max(20px, env(safe-area-inset-right))
+    max(40px, env(safe-area-inset-bottom))
+    max(20px, env(safe-area-inset-left));
+}
+
+.container {
+  width: min(100%, var(--container));
+  margin: 0 auto;
+}
+
+/* ─── Topbar ─────────────────────────────────────────────── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0 2.5rem;
+}
+
+.brand {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--indigo-600);
+}
+
+.wip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(79, 70, 229, 0.18);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--indigo-600);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(8px);
+}
+
+.wip-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--green-500);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18); }
+  50%       { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.08); }
+}
+
+/* ─── Hero ───────────────────────────────────────────────── */
+.hero {
+  padding: 2.5rem 2.5rem 2.75rem;
+  background: #ffffff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 1.25rem;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--indigo-500);
+  margin-bottom: 1.1rem;
+  opacity: 0.85;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+  color: var(--gray-900);
+  max-width: 16ch;
+  margin-bottom: 1.4rem;
+}
+
+.hero-lead {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.8;
+  color: var(--gray-700);
+  max-width: 60ch;
+}
+
+.accent {
+  color: var(--indigo-600);
+  font-weight: 800;
+}
+
+/* ─── Cards row ──────────────────────────────────────────── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.card {
+  padding: 1.75rem;
+  background: #ffffff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.85rem;
+  background: var(--indigo-50);
+  color: var(--indigo-600);
+  margin-bottom: 1.1rem;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--gray-900);
+  margin-bottom: 0.65rem;
+}
+
+.card p {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--gray-600);
+}
+
+/* ─── Differences ────────────────────────────────────────── */
+.differences {
+  padding: 2rem 2.5rem 2.25rem;
+  background: #ffffff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1.25rem;
+}
+
+.differences-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--gray-900);
+  margin-bottom: 1.5rem;
+}
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 1.25rem 2rem;
+}
+
+.diff-item h3 {
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+.diff-item p {
+  font-size: 0.93rem;
+  line-height: 1.7;
+  color: var(--gray-600);
+}
+
+/* ─── Summary ────────────────────────────────────────────── */
+.summary {
+  padding: 1.75rem 2.5rem;
+  background: var(--indigo-50);
+  border: 1px solid rgba(79,70,229,0.14);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.25rem;
+}
+
+.summary p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--gray-700);
+  max-width: 72ch;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.footer {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.6);
+}
+
+.footer p {
+  font-size: 0.9rem;
+  color: var(--gray-400);
+  line-height: 1.6;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+  }
+
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .differences {
+    padding: 1.5rem;
+  }
+
+  .diff-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .summary {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-title {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: 0ms !important;
+  }
+}
