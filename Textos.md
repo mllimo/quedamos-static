@@ -15,7 +15,7 @@
 - **Sticker**: ¡agüita!
 - **Eyebrow**: Una manera nueva de hacer planes
 - **Título**: Deja de deslizar perfiles. Empieza a quedar de verdad.
-- **Lead**: Quedamos va de planes reales, sin enredos: propones algo, te apuntas a lo que te apetezca, ves quién se viene y pa' fuera. Sin chats eternos, sin pasar perfiles como quien ojea el menú. Solo gente y planes.
+- **Lead**: Quedamos va de planes reales, sin enredos: propones algo, te apuntas a lo que te apetezca, ves quién se viene y pa' fuera. Como se quedaba antes, sin maguas ni pantallas de por medio.
 
 ## Tarjetas
 
@@ -23,7 +23,7 @@
 Para que la gente se conozca en la vida real, como se ha hecho toda la vida pero con un empujoncito. Aquí lo que importa es coincidir de verdad, con gente afín y sin liarla.
 
 ### Cómo va la cosa
-Propones un plan o te apuntas a uno: bajar a la playa, hacer deporte, irte a un concierto... Lo ves todo al momento, con sus plazas y su gente.
+Propones un plan o te apuntas a uno: hacer deporte, estudiar, tomarte unas cuartitas, ... Lo ves todo al momento, con sus plazas y su gente.
 
 ## Por qué mola
 
